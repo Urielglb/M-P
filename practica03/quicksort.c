@@ -105,10 +105,10 @@ int main ()
     int indices [3];
    #pragma omp parallel sections
     {
-      #pragma omp section
-    qs(arreglo,0,mitad);
         #pragma omp section
-    qs(arreglo,mitad+1,longitudArreglo-1);
+        qs(arreglo,0,mitad);
+        #pragma omp section
+        qs(arreglo,mitad+1,longitudArreglo-1);
     }
     indices [0] = 0;
     indices[1] = mitad;
